@@ -1,11 +1,30 @@
-  <div class="cards">
-  <% @cocktails.each do |cocktail| %>
-      <div class="card-category" >
-        <%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %>
-      </div>
-    <%end  %>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="carousel-caption d-none d-md-block" style = "bottom: 500px">
+    <a href="cocktails/new"  style="text-decoration:none; font-size: 40px; font-family: courier; text-decoration-color: white"> <strong> Crie o seu Drink </strong>! </a>
   </div>
-  <%= link_to "Criar Cocktail", new_cocktail_path  %>
-
-
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="1000">
+      <img src="https://images.unsplash.com/photo-1523529364348-e930dcb39642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="d-block w-100" alt="..." style= "height: 100vh">
+    </div>
+    <div class="carousel-item" data-interval="20000">
+      <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="d-block w-100" alt="..." style= "height: 100vh">
+    </div>
+    <div class="carousel-item" data-interval="20000">
+      <img src="https://images.unsplash.com/photo-1515674213736-54d14b4285b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="d-block w-100" alt="..." style= "height: 100vh">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 

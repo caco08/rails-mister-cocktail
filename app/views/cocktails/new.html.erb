@@ -1,4 +1,9 @@
-<%= simple_form_for [@cocktail] do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "add", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for [@cocktail] do |f| %>
+    <%= f.input :name,
+                input_html: { class: "rounded-pill pl-4", onkeyup:"this.value = this.value.toUpperCase();" },
+                label: "Nome do Drink:" %>
+    <%= f.submit "Criar", class: " rounded-pill pl-4 btn btn-outline-primary"  %>
+  <a class="btn btn-link" style= "text-decoration: none" href="/cocktails"> Home </a>
+  <% end %>
+</div>
