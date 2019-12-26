@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.cr
 require 'open-uri'
+require 'csv'
 
 Ingredient.destroy_all
 
@@ -17,4 +12,13 @@ ingredients["drinks"].each do |ingredient|
   puts "create #{i.name}"
 end
 
-Cocktail.create!(name: "caipirinha, mojito")
+filepath = 'db/drinks.csv'
+drinks = {}
+CSV.foreach(filepath, headers:true) do |row|
+  drink = Drink.new()
+  drink.name = row[0]
+  drink.ingredientes = row[1]
+  drink.metodo = row[2]
+  drink.save
+  puts "#{drink.name} saved on DB"
+end
