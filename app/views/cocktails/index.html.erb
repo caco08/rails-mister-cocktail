@@ -25,3 +25,26 @@
   </a>
 </div>
 
+
+
+
+
+<div class="container">
+   <section class="drink">
+    <% if @drinks.present? %>
+      <% @drinks.each do |drink| %>
+        <div class="col-md-12">
+          <h3><%= drink.name %></h3>
+          <p><%= drink.ingredientes %></p>
+          <p><%= drink.metodo %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </selection>
+</div>
+
+
+
+
+
+

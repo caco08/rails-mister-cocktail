@@ -1,15 +1,13 @@
 <div class="container">
-  <%= simple_form_for [@cocktail] do |f| %>
-    <%= f.input :name, placeholder: 'escola dos ingredientes',
-                input_html: { class: "rounded-pill pl-4", onkeyup:"this.value = this.value.toUpperCase();" },
-                label: "Monte o seu Drink:"%>
-    <%= f.submit "Criar", class: " rounded-pill pl-4 btn btn-outline-primary"  %>
-  <% end %>
-
+   <section class="drink">
+    <% if @drinks.present? %>
+      <% @drinks.each do |drink| %>
+        <div class="col-md-12">
+          <h3><%= drink.name %></h3>
+          <p><%= drink.ingredientes %></p>
+          <p><%= drink.metodo %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </selection>
 </div>
-
-
-
-
-
-

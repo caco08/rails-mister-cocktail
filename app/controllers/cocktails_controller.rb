@@ -1,19 +1,23 @@
 class CocktailsController < ApplicationController
- before_action :set_cocktail, only: [:show, :destroy]
+ before_action :set_cocktail, only: [:destroy]
 
   # GET /cocktail
   def index
     @cocktails = Cocktail.all
+     if params[:query].present?
+      sql_query = "name ILIKE :query OR ingredientes ILIKE :query"
+      @drinks = Drink.where(sql_query, query: "%#{params[:query]}%")
+    end
   end
+
+
 
   def show
-
   end
-  # GET /cocktail/1
 
-  # GET /cocktail/new
   def new
     @cocktail = Cocktail.new
+
   end
 
   # GET /cocktail/1/edit
@@ -49,3 +53,5 @@ class CocktailsController < ApplicationController
     params.require(:cocktail).permit(:name)
   end
 end
+
+

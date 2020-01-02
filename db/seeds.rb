@@ -2,8 +2,10 @@ require 'open-uri'
 require 'csv'
 
 Ingredient.destroy_all
-
+puts "#{Ingredient.name}" destroy
 Cocktail.destroy_all
+
+Drink.destroy_all
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 ingredients = JSON.parse(open(url).read)
