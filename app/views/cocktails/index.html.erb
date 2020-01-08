@@ -26,25 +26,34 @@
 </div>
 
 
-
-
-
-<div class="container">
-   <section class="drink">
-    <% if @drinks.present? %>
-      <% @drinks.each do |drink| %>
-        <div class="col-md-12">
-          <h3><%= drink.name %></h3>
-          <p><%= drink.ingredientes %></p>
-          <p><%= drink.metodo %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </selection>
+<div class="bg">
+  <div class="container">
+    <div class="text-primary">
+      <div class="cards">
+        <% if @drinks.present? %>
+          <% @drinks.each do |drink| %>
+            <div class="card-trip m-2">
+              <%= image_tag ("cup.jpg") %>
+              <div class="card-trip-infos">
+                <div>
+                  <h4 class="card-title block-with-text mb-2"><%= drink.name %> </h4>
+                    <% a= drink.ingredientes %>
+                    <% b= a.split(",") %>
+                    <% b.each do |item| %>
+                    <p class="card-text mr-2"><li>  <%= item %>  </li></p>
+                    <% end %>
+                    <h4> <strong> Modo de preparo:</strong> </h4>
+                  <div class="d-flex justify-content-between" style="width: 100%">
+                    <h2 class="card-trip-pricing"><%= drink.metodo %></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-
 
 

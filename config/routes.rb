@@ -7,3 +7,4 @@ Rails.application.routes.draw do
   resources :doses, only: [:create, :new]
   resources :doses, only: [:destroy] # delete destroy
 end
+

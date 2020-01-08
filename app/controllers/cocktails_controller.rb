@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
- before_action :set_cocktail, only: [:destroy]
+ before_action :set_cocktail, only: [:destroy, :show]
 
   # GET /cocktail
   def index
@@ -10,9 +10,8 @@ class CocktailsController < ApplicationController
     end
   end
 
-
-
   def show
+    @dose = Dose.new
   end
 
   def new
@@ -30,7 +29,7 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to @cocktail, notice: 'cocktail was successfully created.'
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -53,5 +52,10 @@ class CocktailsController < ApplicationController
     params.require(:cocktail).permit(:name)
   end
 end
+
+
+
+
+
 
 

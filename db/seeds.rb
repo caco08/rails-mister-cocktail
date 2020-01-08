@@ -2,7 +2,8 @@ require 'open-uri'
 require 'csv'
 
 Ingredient.destroy_all
-puts "#{Ingredient.name}" destroy
+puts "#{Ingredient.name} destroy"
+
 Cocktail.destroy_all
 
 Drink.destroy_all
